@@ -5,7 +5,7 @@ const CategoryCard = ({ category }: { category: Category }) => {
   const Icon = category.icon;
   return (
     <Link
-      to={`/category/${category.slug}`}
+      to={category.routePath}
       className="group flex items-center gap-4 rounded-xl border bg-card p-4 shadow-tool transition-all duration-200 hover:shadow-tool-hover hover:-translate-y-0.5"
     >
       <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-lg ${category.bgClass}`}>

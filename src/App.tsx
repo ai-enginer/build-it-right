@@ -21,10 +21,21 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/tool/word-counter" element={<WordCounter />} />
-          <Route path="/tool/json-formatter" element={<JsonFormatter />} />
-          <Route path="/tool/:slug" element={<ToolPlaceholder />} />
-          <Route path="/category/:slug" element={<CategoryPage />} />
+          {/* Category pages */}
+          <Route path="/pdf-tools" element={<CategoryPage />} />
+          <Route path="/image-tools" element={<CategoryPage />} />
+          <Route path="/ai-tools" element={<CategoryPage />} />
+          <Route path="/text-tools" element={<CategoryPage />} />
+          <Route path="/video-audio-tools" element={<CategoryPage />} />
+          <Route path="/developer-tools" element={<CategoryPage />} />
+          <Route path="/converter-tools" element={<CategoryPage />} />
+          <Route path="/calculator-tools" element={<CategoryPage />} />
+          <Route path="/seo-web-tools" element={<CategoryPage />} />
+          {/* Built tools */}
+          <Route path="/tools/word-counter" element={<WordCounter />} />
+          <Route path="/tools/json-formatter" element={<JsonFormatter />} />
+          {/* Catch-all for unbuilt tools */}
+          <Route path="/tools/:slug" element={<ToolPlaceholder />} />
           <Route path="/all-tools" element={<AllTools />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

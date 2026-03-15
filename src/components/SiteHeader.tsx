@@ -23,10 +23,10 @@ const SiteHeader = () => {
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex">
-          <Link to="/category/pdf" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">PDF</Link>
-          <Link to="/category/image" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">Image</Link>
-          <Link to="/category/ai" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">AI Tools</Link>
-          <Link to="/category/developer" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">Developer</Link>
+          <Link to="/pdf-tools" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">PDF</Link>
+          <Link to="/image-tools" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">Image</Link>
+          <Link to="/ai-tools" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">AI Tools</Link>
+          <Link to="/developer-tools" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">Developer</Link>
           <Link to="/all-tools" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">All Tools</Link>
         </nav>
 
@@ -44,7 +44,7 @@ const SiteHeader = () => {
                   autoFocus
                   value={query}
                   onChange={e => setQuery(e.target.value)}
-                  placeholder="Search 76+ tools..."
+                  placeholder="Search 110+ tools..."
                   className="w-full rounded-lg bg-secondary px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground outline-none"
                 />
                 {filtered.length > 0 && (
@@ -52,7 +52,7 @@ const SiteHeader = () => {
                     {filtered.map(t => (
                       <Link
                         key={t.slug}
-                        to={`/tool/${t.slug}`}
+                        to={`/tools/${t.slug}`}
                         onClick={() => { setSearchOpen(false); setQuery(""); }}
                         className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-foreground transition-colors hover:bg-secondary"
                       >
@@ -77,10 +77,10 @@ const SiteHeader = () => {
       {menuOpen && (
         <div className="border-t bg-card p-4 md:hidden animate-fade-in">
           <nav className="flex flex-col gap-2">
-            <Link to="/category/pdf" onClick={() => setMenuOpen(false)} className="rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-secondary">PDF Tools</Link>
-            <Link to="/category/image" onClick={() => setMenuOpen(false)} className="rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-secondary">Image Tools</Link>
-            <Link to="/category/ai" onClick={() => setMenuOpen(false)} className="rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-secondary">AI Tools</Link>
-            <Link to="/category/developer" onClick={() => setMenuOpen(false)} className="rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-secondary">Developer</Link>
+            <Link to="/pdf-tools" onClick={() => setMenuOpen(false)} className="rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-secondary">PDF Tools</Link>
+            <Link to="/image-tools" onClick={() => setMenuOpen(false)} className="rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-secondary">Image Tools</Link>
+            <Link to="/ai-tools" onClick={() => setMenuOpen(false)} className="rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-secondary">AI Tools</Link>
+            <Link to="/developer-tools" onClick={() => setMenuOpen(false)} className="rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-secondary">Developer</Link>
             <Link to="/all-tools" onClick={() => setMenuOpen(false)} className="rounded-lg px-3 py-2 text-sm font-medium text-foreground hover:bg-secondary">All Tools</Link>
           </nav>
         </div>

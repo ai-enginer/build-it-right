@@ -15,7 +15,7 @@ const SiteFooter = () => {
               <span className="text-lg font-bold text-foreground">ToolBox</span>
             </Link>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              76+ free online tools. No login, no signup, no credit card. Just get things done.
+              110+ free online tools. No login, no signup, no credit card. Just get things done.
             </p>
           </div>
 
@@ -23,7 +23,7 @@ const SiteFooter = () => {
             <h4 className="mb-3 text-sm font-semibold text-foreground">Categories</h4>
             <div className="flex flex-col gap-1.5">
               {categories.slice(0, 5).map(cat => (
-                <Link key={cat.slug} to={`/category/${cat.slug}`} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link key={cat.slug} to={cat.routePath} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   {cat.name}
                 </Link>
               ))}
@@ -34,7 +34,7 @@ const SiteFooter = () => {
             <h4 className="mb-3 text-sm font-semibold text-foreground">More Categories</h4>
             <div className="flex flex-col gap-1.5">
               {categories.slice(5).map(cat => (
-                <Link key={cat.slug} to={`/category/${cat.slug}`} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link key={cat.slug} to={cat.routePath} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   {cat.name}
                 </Link>
               ))}
@@ -45,7 +45,7 @@ const SiteFooter = () => {
             <h4 className="mb-3 text-sm font-semibold text-foreground">Popular Tools</h4>
             <div className="flex flex-col gap-1.5">
               {tools.slice(0, 5).map(t => (
-                <Link key={t.slug} to={`/tool/${t.slug}`} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link key={t.slug} to={`/tools/${t.slug}`} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   {t.name}
                 </Link>
               ))}
