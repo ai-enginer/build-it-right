@@ -11,6 +11,22 @@ import ToolPlaceholder from "./pages/tools/ToolPlaceholder.tsx";
 import CategoryPage from "./pages/CategoryPage.tsx";
 import AllTools from "./pages/AllTools.tsx";
 
+// AI Tools
+import AISummarizer from "./pages/tools/AISummarizer.tsx";
+import AIGrammarChecker from "./pages/tools/AIGrammarChecker.tsx";
+import AIParaphraser from "./pages/tools/AIParaphraser.tsx";
+import AITranslator from "./pages/tools/AITranslator.tsx";
+import AIEssayWriter from "./pages/tools/AIEssayWriter.tsx";
+import AIEmailWriter from "./pages/tools/AIEmailWriter.tsx";
+import AICodeGenerator from "./pages/tools/AICodeGenerator.tsx";
+import AIImageGenerator from "./pages/tools/AIImageGenerator.tsx";
+import AIChatbot from "./pages/tools/AIChatbot.tsx";
+import AIPlagiarismChecker from "./pages/tools/AIPlagiarismChecker.tsx";
+import AIHashtagGenerator from "./pages/tools/AIHashtagGenerator.tsx";
+import AIBioGenerator from "./pages/tools/AIBioGenerator.tsx";
+import AICaptionGenerator from "./pages/tools/AICaptionGenerator.tsx";
+import AITextToSpeech from "./pages/tools/AITextToSpeech.tsx";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -34,6 +50,21 @@ const App = () => (
           {/* Built tools */}
           <Route path="/tools/word-counter" element={<WordCounter />} />
           <Route path="/tools/json-formatter" element={<JsonFormatter />} />
+          {/* AI Tools */}
+          <Route path="/tools/ai-summarizer" element={<AISummarizer />} />
+          <Route path="/tools/ai-grammar-checker" element={<AIGrammarChecker />} />
+          <Route path="/tools/ai-paraphraser" element={<AIParaphraser />} />
+          <Route path="/tools/ai-translator" element={<AITranslator />} />
+          <Route path="/tools/ai-essay-writer" element={<AIEssayWriter />} />
+          <Route path="/tools/ai-email-writer" element={<AIEmailWriter />} />
+          <Route path="/tools/ai-code-generator" element={<AICodeGenerator />} />
+          <Route path="/tools/ai-image-generator" element={<AIImageGenerator />} />
+          <Route path="/tools/ai-chatbot" element={<AIChatbot />} />
+          <Route path="/tools/ai-plagiarism-checker" element={<AIPlagiarismChecker />} />
+          <Route path="/tools/ai-hashtag-generator" element={<AIHashtagGenerator />} />
+          <Route path="/tools/ai-bio-generator" element={<AIBioGenerator />} />
+          <Route path="/tools/ai-caption-generator" element={<AICaptionGenerator />} />
+          <Route path="/tools/ai-text-to-speech" element={<AITextToSpeech />} />
           {/* Catch-all for unbuilt tools */}
           <Route path="/tools/:slug" element={<ToolPlaceholder />} />
           <Route path="/all-tools" element={<AllTools />} />
