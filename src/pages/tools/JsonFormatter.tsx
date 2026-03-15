@@ -33,8 +33,8 @@ const JsonFormatter = () => {
   return (
     <SiteLayout>
       <div className="container py-8">
-        <Link to="/" className="mb-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
-          <ArrowLeft className="h-3.5 w-3.5" /> Back to all tools
+        <Link to="/developer-tools" className="mb-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <ArrowLeft className="h-3.5 w-3.5" /> Back to Developer Tools
         </Link>
 
         <div className="mb-6">

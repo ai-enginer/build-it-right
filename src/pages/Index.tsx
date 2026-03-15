@@ -24,7 +24,7 @@ const Index = () => {
           <div className="mx-auto max-w-2xl text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
               <Shield className="h-3 w-3" />
-              76+ Free Tools • No Login Required • 100% Private
+              110+ Free Tools • No Login Required • 100% Private
             </div>
             <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl">
               Every tool you need,{" "}
@@ -48,7 +48,7 @@ const Index = () => {
                   {searchResults.map(t => (
                     <Link
                       key={t.slug}
-                      to={`/tool/${t.slug}`}
+                      to={`/tools/${t.slug}`}
                       onClick={() => setSearchQuery("")}
                       className="flex items-center justify-between rounded-lg px-3 py-2.5 text-sm hover:bg-secondary transition-colors"
                     >
@@ -96,7 +96,7 @@ const Index = () => {
             <p className="mt-2 text-sm text-muted-foreground">
               14 tools powered by AI. Summarize text, check grammar, generate content — all for free.
             </p>
-            <Button className="mt-6" onClick={() => navigate("/category/ai")}>
+            <Button className="mt-6" onClick={() => navigate("/ai-tools")}>
               Explore AI Tools <ArrowRight className="ml-1 h-4 w-4" />
             </Button>
           </div>

@@ -1,13 +1,13 @@
-import { useParams, Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 import ToolCard from "@/components/ToolCard";
-import { categories, getToolsByCategory } from "@/lib/tools-data";
+import { getCategoryByRoutePath, getToolsByCategory } from "@/lib/tools-data";
 import { ArrowLeft } from "lucide-react";
 
 const CategoryPage = () => {
-  const { slug } = useParams<{ slug: string }>();
-  const category = categories.find(c => c.slug === slug);
-  const categoryTools = getToolsByCategory(slug || "");
+  const { pathname } = useLocation();
+  const category = getCategoryByRoutePath(pathname);
+  const categoryTools = category ? getToolsByCategory(category.slug) : [];
 
   if (!category) {
     return (
@@ -35,19 +35,13 @@ const CategoryPage = () => {
           </div>
           <div>
             <h1 className="text-2xl font-bold text-foreground">{category.name}</h1>
-            <p className="text-sm text-muted-foreground">{category.toolCount} free tools • No login required</p>
+            <p className="text-sm text-muted-foreground">{categoryTools.length} free tools • No login required</p>
           </div>
         </div>
 
-        {categoryTools.length > 0 ? (
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {categoryTools.map(t => <ToolCard key={t.slug} tool={t} />)}
-          </div>
-        ) : (
-          <div className="rounded-xl border bg-card p-12 text-center shadow-card">
-            <p className="text-muted-foreground">Tools for this category are coming soon!</p>
-          </div>
-        )}
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {categoryTools.map(t => <ToolCard key={t.slug} tool={t} />)}
+        </div>
       </div>
     </SiteLayout>
   );
